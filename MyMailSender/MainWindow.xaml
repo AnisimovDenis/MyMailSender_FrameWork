@@ -111,7 +111,13 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Планировшик">
-
+                <Grid>
+                    <StackPanel>
+                        <Calendar />
+                        <TextBlock Text="Заметка" />
+                        <TextBox />
+                    </StackPanel>
+                </Grid>
             </TabItem>
         </TabControl>
     </Grid>
