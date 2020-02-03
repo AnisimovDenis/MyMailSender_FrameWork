@@ -5,10 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyMailSender"
         xmlns:fa="http://schemas.fontawesome.io/icons/"
+        xmlns:data="clr-namespace:MailSender_lib.Data;assembly=MailSender-lib"
         mc:Ignorable="d"
         Title="MailSender" Height="450" Width="800"
         WindowStartupLocation="CenterScreen">
     <Grid>
+        <Grid.Resources>
+            <data:DataBaseLinq x:Key="dataUser" />
+        </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition />
@@ -39,7 +43,20 @@
                                 <RowDefinition />
                                 <RowDefinition Height="auto"/>
                             </Grid.RowDefinitions>
-                            <ListBox />
+                            <ListBox ItemsSource="{Binding User, Source={StaticResource dataUser}}">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate DataType="data:User">
+                                        <StackPanel>
+                                            <TextBlock Text="{Binding Email}"/>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="{Binding FirstName, TargetNullValue=-}"/>
+                                                <TextBlock Text=" "/>
+                                                <TextBlock Text="{Binding LastName, TargetNullValue=-}"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
                             <UniformGrid Grid.Row="1"
                                          Rows="1">
                                 <Button>
