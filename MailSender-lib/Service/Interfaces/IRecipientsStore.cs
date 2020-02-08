@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace MailSender_lib.Service.Interfaces
 {
-    public interface IRecipientsManager
+    public interface IRecipientsStore
     {
-        void Add(Recipient newRecipient);
+        IEnumerable<Recipient> Get();
 
-        void Edit(Recipient recipient);
+        void Edit(int id, Recipient Recipient);
 
         void SaveChanges();
     }
