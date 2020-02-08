@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace MailSender_lib.Entities
 {
-    public class Sender : PersonEntity
+    public class MailingList : NamedEntity
     {
-        public override string ToString() => $"{Name}:{Address}";
+        public ICollection<Recipient> Recipients { get; set; } = new List<Recipient>();
     }
-
 }

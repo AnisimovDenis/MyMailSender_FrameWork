@@ -1,34 +1,38 @@
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.CommandWpf;
+using MailSender_lib.Entities;
+using MailSender_lib.Service;
+using MailSender_lib.Service.Interfaces;
+using System.Windows.Input;
 
 namespace MyMailSender.ViewModel
 {
-    /// <summary>
-    /// This class contains properties that the main View can data bind to.
-    /// <para>
-    /// Use the <strong>mvvminpc</strong> snippet to add bindable properties to this ViewModel.
-    /// </para>
-    /// <para>
-    /// You can also use Blend to data bind with the tool's support.
-    /// </para>
-    /// <para>
-    /// See http://www.galasoft.ch/mvvm
-    /// </para>
-    /// </summary>
     public class MainViewModel : ViewModelBase
     {
-        /// <summary>
-        /// Initializes a new instance of the MainViewModel class.
-        /// </summary>
-        public MainViewModel()
+        private readonly IRecipientsManager _RecipientsManager;
+
+
+        public ICommand LoadRecipientsDataCommand { get; }
+
+        public ICommand SaveRecipientChangesCommand { get; }
+
+        public MainViewModel(IRecipientsManager RecipientsManager)
         {
-            ////if (IsInDesignMode)
-            ////{
-            ////    // Code runs in Blend --> create design time data.
-            ////}
-            ////else
-            ////{
-            ////    // Code runs "for real"
-            ////}
+            SaveRecipientChangesCommand = new RelayCommand<Recipient>(OnSaveRecipientChangesCommandExecuted, CanSaveRecipientChangesCommandExecute);
+
+            _RecipientsManager = RecipientsManager;
+        }
+
+        private bool CanSaveRecipientChangesCommandExecute(Recipient recipient)
+        {
+            System.Diagnostics.Debug.WriteLine("Проверка состояния команды " + recipient?.FirstName);
+            return recipient != null;
+        }
+
+        private void OnSaveRecipientChangesCommandExecuted(Recipient recipient)
+        {
+            _RecipientsManager.Edit(recipient);
+            _RecipientsManager.SaveChanges();
         }
     }
 }

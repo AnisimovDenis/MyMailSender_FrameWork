@@ -8,8 +8,10 @@ using MailSender_lib.Service.Interfaces;
 
 namespace MailSender_lib.Service
 {
-    class RecipientsManager : IRecipientsManager
+    public class RecipientsManager : IRecipientsManager
     {
+        private IRecipientsStore _Store;
+
         public void Add(Recipient newRecipient)
         {
             throw new NotImplementedException();
