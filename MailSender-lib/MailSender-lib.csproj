@@ -63,8 +63,13 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Service\Interfaces\IDataStore.cs" />
+    <Compile Include="Service\Interfaces\IMailingListStore.cs" />
+    <Compile Include="Service\Interfaces\IMailsStore.cs" />
     <Compile Include="Service\Interfaces\IRecipientsManager.cs" />
     <Compile Include="Service\Interfaces\IRecipientsStore.cs" />
+    <Compile Include="Service\Interfaces\ISendersStore.cs" />
+    <Compile Include="Service\Interfaces\IServersStore.cs" />
     <Compile Include="Service\RecipientsManager.cs" />
     <Compile Include="Service\RecipientsStoreInMemory.cs" />
   </ItemGroup>
