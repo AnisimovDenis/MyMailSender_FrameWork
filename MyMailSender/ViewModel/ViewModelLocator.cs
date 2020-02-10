@@ -49,7 +49,7 @@ namespace MyMailSender.ViewModel
             services.Register<MainViewModel>();
 
             services.Register<IRecipientsManager, RecipientsManager>();
-            services.Register<IRecipientsStore, RecipientsStoreInMemory>(); ;
+            services.Register<IRecipientsStore, RecipientsStoreInMemory>();
         }
 
         public MainViewModel Main

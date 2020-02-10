@@ -25,7 +25,7 @@ namespace MyMailSender.ViewModel
 
         private bool CanSaveRecipientChangesCommandExecute(Recipient recipient)
         {
-            System.Diagnostics.Debug.WriteLine("Проверка состояния команды " + recipient?.FirstName);
+            System.Diagnostics.Debug.WriteLine("Проверка состояния команды " + recipient?.Name);
             return recipient != null;
         }
 
