@@ -16,15 +16,13 @@
             <RowDefinition />
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <ListBox ItemsSource="{Binding User, Source={StaticResource dataUser}}">
+        <ListBox ItemsSource="{Binding Recipient, Source={StaticResource dataUser}}">
             <ListBox.ItemTemplate>
                 <DataTemplate DataType="data:User">
                     <StackPanel>
                         <TextBlock Text="{Binding Email}"/>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding FirstName, TargetNullValue=-}"/>
-                            <TextBlock Text=" "/>
-                            <TextBlock Text="{Binding LastName, TargetNullValue=-}"/>
+                            <TextBlock Text="{Binding Name, TargetNullValue=-}"/>
                         </StackPanel>
                     </StackPanel>
                 </DataTemplate>

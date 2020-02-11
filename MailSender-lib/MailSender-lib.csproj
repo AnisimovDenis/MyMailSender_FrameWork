@@ -47,6 +47,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataBaseLinq.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Data\TestData.cs" />
     <Compile Include="Entities\Base\BaseEntity.cs" />
     <Compile Include="Entities\Base\NamedEntity.cs" />
     <Compile Include="Entities\Base\PersonEntity.cs" />
@@ -63,10 +64,16 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Service\InMemory\DataStoreInMemory.cs" />
+    <Compile Include="Service\Interfaces\IDataStore.cs" />
+    <Compile Include="Service\Interfaces\IMailingListStore.cs" />
+    <Compile Include="Service\Interfaces\IMailsStore.cs" />
     <Compile Include="Service\Interfaces\IRecipientsManager.cs" />
     <Compile Include="Service\Interfaces\IRecipientsStore.cs" />
+    <Compile Include="Service\Interfaces\ISendersStore.cs" />
+    <Compile Include="Service\Interfaces\IServersStore.cs" />
     <Compile Include="Service\RecipientsManager.cs" />
-    <Compile Include="Service\RecipientsStoreInMemory.cs" />
+    <Compile Include="Service\InMemory\RecipientsStoreInMemory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

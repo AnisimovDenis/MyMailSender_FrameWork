@@ -1,11 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MailSender" Class="DataBaseLinq" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=DENIS-PC;Initial Catalog=MailSender;Integrated Security=True" SettingsObjectName="MailSender_lib.Properties.Settings" SettingsPropertyName="MailSenderConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.[User]" Member="User">
-    <Type Name="User">
+  <Table Name="dbo.Server" Member="Server">
+    <Type Name="Server">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Port" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UseSSL" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Login" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Mail" Member="Mail">
+    <Type Name="Mail">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Subject" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Body" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Recipient" Member="Recipient">
+    <Type Name="Recipient">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Email" Type="System.String" DbType="NVarChar(40) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="FirstName" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
-      <Column Name="LastName" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>
