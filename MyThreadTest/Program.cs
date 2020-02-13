@@ -12,7 +12,15 @@ namespace MyThreadTest
         static Mutex resetEvent = new Mutex();
         static void Main(string[] args)
         {
-            
+            Thread threadFactorial = new Thread(Factorial);
+            threadFactorial.Name = "Факториал";
+            threadFactorial.Priority = ThreadPriority.Highest;
+            threadFactorial.Start();
+
+            Thread threadSum = new Thread(Sum);
+            threadSum.Name = "Сумма чисел";
+            threadSum.Priority = ThreadPriority.Lowest;
+            threadSum.Start();
         }
 
 
