@@ -10,6 +10,10 @@ namespace MyTaskTest
     {
         static Random rnd = new Random();
 
+        /// <summary>
+        /// Генерирует значения матрицы
+        /// </summary>
+        /// <param name="mass">матрица</param>
         public static void RandMatrix(ref int[,] mass)
         {
             for (int i = 0; i < mass.GetLength(0); i++)
@@ -21,6 +25,11 @@ namespace MyTaskTest
             }
         }
 
+        /// <summary>
+        /// Увеличивает матрицу
+        /// </summary>
+        /// <param name="mass">матрица</param>
+        /// <param name="increase">увеличение</param>
         public static void IncreaseMatrix(ref int[,] mass, int increase)
         {
             int[,] newMass = new int[mass.GetLength(0) * increase, mass.GetLength(1) * increase];
@@ -30,6 +39,10 @@ namespace MyTaskTest
             mass = newMass;
         }
 
+        /// <summary>
+        /// Вывод матрицы на экран
+        /// </summary>
+        /// <param name="mass">матрица</param>
         public static void PrintMatrix(int[,] mass)
         {
             for (int i = 0; i < mass.GetLength(0); i++)
