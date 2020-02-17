@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Thread", "Thread", "{04E45C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyThreadTest", "MyThreadTest\MyThreadTest.csproj", "{1E1645C8-BB3D-4CE0-B18D-65BCE708AFBD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task", "Task", "{35658C12-D094-472F-B70D-F9FA63DE079D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTaskTest", "MyTaskTest\MyTaskTest.csproj", "{0D4C46D7-7264-4514-9163-5C0A8720571F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,12 +33,17 @@ Global
 		{1E1645C8-BB3D-4CE0-B18D-65BCE708AFBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E1645C8-BB3D-4CE0-B18D-65BCE708AFBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E1645C8-BB3D-4CE0-B18D-65BCE708AFBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D4C46D7-7264-4514-9163-5C0A8720571F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D4C46D7-7264-4514-9163-5C0A8720571F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D4C46D7-7264-4514-9163-5C0A8720571F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D4C46D7-7264-4514-9163-5C0A8720571F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1E1645C8-BB3D-4CE0-B18D-65BCE708AFBD} = {04E45CF0-85FE-40C4-85A9-D1970D0BEC58}
+		{0D4C46D7-7264-4514-9163-5C0A8720571F} = {35658C12-D094-472F-B70D-F9FA63DE079D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D9054A39-41EF-470D-93BD-0AE9F62F86D6}
