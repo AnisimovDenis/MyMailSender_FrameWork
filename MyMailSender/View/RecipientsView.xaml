@@ -5,18 +5,16 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MyMailSender.View"
              xmlns:fa="http://schemas.fontawesome.io/icons/"
-             xmlns:data="clr-namespace:MailSender_lib.Data;assembly=MailSender-lib"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.Resources>
-            <data:DataBaseLinq x:Key="dataUser" />
         </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <ListBox ItemsSource="{Binding Recipient, Source={StaticResource dataUser}}">
+        <ListBox>
             <ListBox.ItemTemplate>
                 <DataTemplate DataType="data:User">
                     <StackPanel>
