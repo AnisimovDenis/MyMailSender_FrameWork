@@ -9,6 +9,8 @@ namespace MailSender_lib.Service.Interfaces
 {
     public interface IRecipientsManager
     {
+        IEnumerable<Recipient> GetAll();
+
         void Add(Recipient newRecipient);
 
         void Edit(Recipient recipient);
