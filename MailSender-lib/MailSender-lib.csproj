@@ -66,6 +66,7 @@
     <Compile Include="Entities\Mail.cs" />
     <Compile Include="Entities\MailingList.cs" />
     <Compile Include="Entities\Recipient.cs" />
+    <Compile Include="Entities\SchedulerTask.cs" />
     <Compile Include="Entities\Sender.cs" />
     <Compile Include="Entities\Server.cs" />
     <Compile Include="MVVM\LambdaCommand.cs" />
@@ -76,14 +77,20 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Service\DebugMailSender.cs" />
     <Compile Include="Service\InMemory\DataStoreInMemory.cs" />
     <Compile Include="Service\Interfaces\IDataStore.cs" />
     <Compile Include="Service\Interfaces\IMailingListStore.cs" />
+    <Compile Include="Service\Interfaces\IMailScheduler.cs" />
+    <Compile Include="Service\Interfaces\IMailSenderService.cs" />
     <Compile Include="Service\Interfaces\IMailsStore.cs" />
     <Compile Include="Service\Interfaces\IRecipientsManager.cs" />
     <Compile Include="Service\Interfaces\IRecipientsStore.cs" />
+    <Compile Include="Service\Interfaces\ISchedulerTasksStore.cs" />
     <Compile Include="Service\Interfaces\ISendersStore.cs" />
     <Compile Include="Service\Interfaces\IServersStore.cs" />
+    <Compile Include="Service\MailSchedulerTPL.cs" />
+    <Compile Include="Service\MailSender.cs" />
     <Compile Include="Service\RecipientsManager.cs" />
     <Compile Include="Service\InMemory\RecipientsStoreInMemory.cs" />
   </ItemGroup>

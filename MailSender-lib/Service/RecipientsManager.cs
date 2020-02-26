@@ -12,19 +12,27 @@ namespace MailSender_lib.Service
     {
         private IRecipientsStore _Store;
 
-        public void Add(Recipient newRecipient)
+        public RecipientsManager(IRecipientsStore Store) { _Store = Store; }
+
+
+        public IEnumerable<Recipient> GetAll()
         {
-            throw new NotImplementedException();
+            return _Store.GetAll();
         }
 
-        public void Edit(Recipient recipient)
+        public void Add(Recipient NewRecipient)
         {
-            throw new NotImplementedException();
+
+        }
+
+        public void Edit(Recipient Recipient)
+        {
+            _Store.Edit(Recipient.Id, Recipient);
         }
 
         public void SaveChanges()
         {
-            throw new NotImplementedException();
+            _Store.SaveChanges();
         }
     }
 }
